@@ -1,0 +1,22 @@
+@import "../../.././../../src/scss/colors.scss";
+nav{
+    background: $primary;
+}
+p.user-name{
+    margin:0 0 0 0.5em;
+    color: $text;
+    word-break: break-all;
+    font-size: calc(1.5em - 5%);
+}
+.mat-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  color: #002d57;
+}
+

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-betwen">
+      <img
+        src="assets/img/logo-sm.png"
+        alt="Farmacias Roma"
+        class="img-fluid"
+        width="80"
+      />
+      <p class="user-name d-none d-sm-block">Martin Amaro Garcia</p>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+      <app-navbar-items>
+        <div title>Prenomina</div>
+        <mat-icon icon class="mat-active">payment</mat-icon>
+      </app-navbar-items>
+      <app-navbar-items [items]="['Workflow', 'Workflow Pendientes']">
+        <div title>Workflow</div>
+        <mat-icon icon class="mat-active">book</mat-icon>
+      </app-navbar-items>
+
+      <app-navbar-items [items]="['Workflow', 'Suplente', 'Cambio Horario']">
+        <div title>Admin</div>
+        <mat-icon icon class="mat-active">https</mat-icon>
+      </app-navbar-items>
+
+      <app-navbar-items [items]="['Actualizar Contraseña', 'Cerrar Sesion']">
+        <div title>Perfil</div>
+        <mat-icon icon class="mat-active">person</mat-icon>
+      </app-navbar-items>
+    </div>
+  </div>
+</nav>

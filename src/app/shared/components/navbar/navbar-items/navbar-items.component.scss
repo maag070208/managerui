@@ -1,0 +1,129 @@
+@import "../../.././../../../src/scss/navbar-items.scss";
+@import "../../.././../../../src/scss/colors.scss";
+@import "../../.././../../../src/scss/fonts.scss";
+
+.main-container {
+  display: $display;
+  border: $border;
+  border-radius: $border;
+  width: $width;
+  flex-direction: $flex;
+  height: $height;
+  align-items: $align;
+  justify-content: $justify;
+  background: $background;
+  color: $color;
+  outline: $outline;
+  min-width: $min;
+  animation-duration: 1s;
+  animation-name: slideout;
+  animation: slideout 0.5s forwards;
+}
+
+.main-container:hover {
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation: slidein 0.3s forwards;
+}
+
+@keyframes slidein {
+  from {
+    background: $background;
+  }
+
+  25% {
+    background: $background-25;
+  }
+
+  35% {
+    background: $background-35;
+  }
+
+  50% {
+    background: $background-50;
+  }
+
+  75% {
+    background: $background-75;
+  }
+
+  to {
+    background: $background-100;
+  }
+}
+
+@keyframes slideout {
+  from {
+    background: $background-100;
+  }
+
+  25% {
+    background: $background-75;
+  }
+
+  50% {
+    background: $background-50;
+  }
+
+  75% {
+    background: $background-25;
+  }
+
+  to {
+    background: $background;
+  }
+}
+
+div {
+  color: $text;
+  font-size: $item-font;
+  font-family: $item-font-fam;
+}
+
+div:hover {
+  color: $text-hover;
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  background: #ff000000;
+  border-color: #ff000000;
+  margin-top: calc(100% - 78%);
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: 2em;
+  margin-left: 2em;
+
+  @media screen and (min-width: 992px) {
+    right: auto;
+    left: auto;
+    height: fit-content;
+    margin-top: calc(100% - 82%);
+  }
+  @media screen and (min-width: 1240px) {
+    margin-top: calc(100% - 86%);
+  }
+}
+
+.dropdown-menu-items{
+  margin-top: calc(100% - 82%) !important;
+}
+
+
+li {
+  height: 3.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(6 54 98);
+  border: 2px #9f9fa1 solid;
+  border-radius: 0.5em;
+  font-size: 18px;
+  text-align: center;
+  min-width: 100%;
+  padding-top: 0.3rem;
+  color: white;
+}

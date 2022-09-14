@@ -1,0 +1,10 @@
+<div class="dropdown main-container mx-4 mt-4 mt-lg-1">
+  <div class=" d-flex flex-row-reverse align-items-center justify-content-center"  data-toggle="dropdown" data-hover="dropdown">
+      <ng-content select="[title]"></ng-content>
+      <ng-content select="[icon]"></ng-content>
+      <ul *ngIf="items.length > 0" [ngClass]="{'dropdown-menu-items' : items.length >= 3}" class="dropdown-menu">
+        <li class="mt-2" *ngFor="let i of items">{{i}}</li>
+      </ul>
+  </div>
+
+</div>
