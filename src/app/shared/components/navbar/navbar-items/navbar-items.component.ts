@@ -1,23 +1,30 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+import { INavItems } from '@app/shared/models/navbar/INavItems.model';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-navbar-items',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule,MatIconModule],
   templateUrl: './navbar-items.component.html',
   styleUrls: ['./navbar-items.component.scss'],
 })
 export class NavbarItemsComponent implements OnChanges {
 
-  @Input() items: any[] = [];
+  @Input() items: INavItems[] = [];
 
   public isMatMenuOpen = false;
   public prevButtonTrigger:any;
 
-  constructor() {
+  constructor(private _router:Router) {
   }
   ngOnChanges(changes: SimpleChanges): void {
+  }
+
+  onClickRoute(route: string) {
+ 
   }
 
   buttonEnter(trigger:any) {

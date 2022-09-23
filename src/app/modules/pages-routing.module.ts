@@ -10,7 +10,7 @@ const routes: Routes = [
     {path:'manager', loadChildren: () => import('./manager/manager.module').then(m => m.ManagerModule)},
     {path:'report', loadChildren: () => import('./report/report.module').then(m => m.ReportModule)},
   ]},
-  {path:'**', redirectTo: '', pathMatch: 'full'},
+  {path:'**', redirectTo: 'login', pathMatch: 'full'},
 ];
 
 @NgModule({

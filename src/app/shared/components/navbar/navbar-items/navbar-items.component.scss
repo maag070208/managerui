@@ -4,8 +4,8 @@
 
 .main-container {
   display: $display;
-  border: $border;
-  border-radius: $border;
+  border: $border-color;
+  border-radius: $border-radius;
   width: $width;
   flex-direction: $flex;
   height: $height;
@@ -101,7 +101,8 @@ div:hover {
     right: auto;
     left: auto;
     height: fit-content;
-    margin-top: calc(100% - 82%);
+    margin-top: calc(100% - 83%) ;
+    margin-left: 0%;
   }
   @media screen and (min-width: 1240px) {
     margin-top: calc(100% - 86%);
@@ -109,7 +110,22 @@ div:hover {
 }
 
 .dropdown-menu-items{
-  margin-top: calc(100% - 82%) !important;
+  margin-top: calc(100% - 25%) !important;
+
+  @media screen and (min-width: 425px) {
+    margin-top: calc(100% - 55%) !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: calc(100% - 70%) !important;
+  }
+
+  @media screen and (min-width: 992px) {
+    margin-top: calc(100% - 77%) !important;
+  }
+  @media screen and (min-width: 1202px) {
+    margin-top: calc(100% - 81%) !important;
+  }
 }
 
 
@@ -126,4 +142,8 @@ li {
   min-width: 100%;
   padding-top: 0.3rem;
   color: white;
+}
+li:hover {
+  background: rgb(217, 233, 247);
+  color: rgb(6 54 98);
 }

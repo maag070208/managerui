@@ -1,4 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./scss/theme.scss";
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/@angular/material/theming";
+@import "./scss/colors.scss";
 
-html, body { height: 100%; }
+html, body { height: 100%; overflow: hidden !important;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+$my-purple: (
+    50 : #e0e6eb,
+    100 : #b3c0cd,
+    200 : #8096ab,
+    300 : #4d6c89,
+    400 : #264d70,
+    500 : #002d57,
+    600 : #00284f,
+    700 : #002246,
+    800 : #001c3c,
+    900 : #00112c,
+    A100 : #658aff,
+    A200 : #3264ff,
+    A400 : #003dfe,
+    A700 : #0037e5,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$primary: mat-palette($my-purple);
+$accent:  mat-palette($my-purple, A200, A100, A400);
+$warn:    mat-palette($mat-red);
+$theme:   mat-light-theme($primary, $accent, $warn);
+
+.mat-toolbar.mat-primary {
+    background: $snackbar-background !important;
+    color: white;
+    font-size: 18px;
+}
+
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgb(0 0 0 / 69%);
+  }
+  
+@include angular-material-theme($theme);

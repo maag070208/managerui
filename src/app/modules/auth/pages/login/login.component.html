@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="row h-100">
+    <div class="col-12 col-lg-5 col-xl-6 bg-primary image-container d-flex justify-content-center align-items-center">
+        <img class="full-logo" src="assets/img/full-logo.png" alt="Farmacias Roma" width="200" />
+        <img class="sm-logo" src="assets/img/logo-sm.png" alt="Farmacias Roma" width="150" />
+    </div>
+    <div class="col-12 col-lg-7 col-xl-6 form-container">
+        <form class="h-100 d-flex justify-content-center align-content-center row" [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+            <h1 class="display-5 col-8 text-center">Iniciar Sesion</h1>
+
+            <mat-form-field class="col-8" appearance="outline">
+                <mat-label>N.Colaborador</mat-label>
+                <input matInput type="text" placeholder="Placeholder" formControlName="user" />
+                <mat-icon matSuffix>person_outline</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="col-8" appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="showpwd ? 'password' : 'text'" placeholder="Placeholder" formControlName="password" />
+                <mat-icon (click)="showpwd = !showpwd" matSuffix>{{showpwd ? 'lock_outline' : 'lock_open'}}</mat-icon>
+            </mat-form-field>
+
+            <section class="col-8 d-flex justify-content-center" [formGroup]="checkForm">
+                <mat-checkbox formControlName="isChecked">Acepto los Terminos y condiciones de uso.</mat-checkbox>
+            </section>
+
+            <div class="d-grid gap-2 col-8 pt-2">
+                <button type *ngIf="checkForm.valid" type="submit" class="col btn btn-block btn-primary" [disabled]="!LoginForm.valid">
+                    INGRESAR
+                </button>
+
+                <button *ngIf="!checkForm.valid" type="submit" class="col btn btn-block btn-primary" [disabled]="true">
+                    INGRESAR
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
