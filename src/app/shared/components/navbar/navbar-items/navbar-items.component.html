@@ -4,7 +4,7 @@
     <div>{{item.name}}</div>
     <mat-icon icon class="mat-active">{{item.icon}}</mat-icon>
       <ul *ngIf="item.child.length > 0" [ngClass]="{'dropdown-menu-items' : item.child.length >= 3}" class="dropdown-menu">
-        <li *ngFor="let i of item.child" > {{i.name}}</li> 
+        <li *ngFor="let i of item.child" [routerLink]="[item.basePath, i.path]"> {{i.name}}</li>
       </ul>
   </div>
 </div>

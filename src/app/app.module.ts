@@ -1,6 +1,5 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,7 +10,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoaderComponent } from './shared/components/loader/loader.component';
-import {ROOT_REDUCERS} from './core/state/app.state';
+import { ROOT_REDUCERS} from './core/state/app.state';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -29,7 +29,7 @@ import {ROOT_REDUCERS} from './core/state/app.state';
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
-    {provide: APP_INITIALIZER, useFactory: () => () => {}, deps: [], multi: true}
+    // {provide: APP_INITIALIZER, useFactory: () => () => {}, deps: [], multi: true}
   ],
   bootstrap: [AppComponent, ]
 })

@@ -107,6 +107,12 @@ div:hover {
   @media screen and (min-width: 1240px) {
     margin-top: calc(100% - 86%);
   }
+  @media screen and (min-width: 1440px) {
+    margin-top: calc(100% - 87%);
+  }
+  @media screen and (min-width: 1520px) {
+    margin-top: calc(100% - 90%);
+  }
 }
 
 .dropdown-menu-items{
@@ -125,6 +131,9 @@ div:hover {
   }
   @media screen and (min-width: 1202px) {
     margin-top: calc(100% - 81%) !important;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: calc(100% - 85%) !important;
   }
 }
 
