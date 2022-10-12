@@ -21,7 +21,6 @@ import { ROOT_REDUCERS} from './core/state/app.state';
     AppRoutingModule,
     BrowserAnimationsModule,
     NavbarComponent,
-    BodyComponent,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'DEV' }),
     MatSnackBarModule,
@@ -29,7 +28,6 @@ import { ROOT_REDUCERS} from './core/state/app.state';
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
-    // {provide: APP_INITIALIZER, useFactory: () => () => {}, deps: [], multi: true}
   ],
   bootstrap: [AppComponent, ]
 })

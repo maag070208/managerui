@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IBody } from '@app/core/models/body/IBody.model';
 
 @Component({
   selector: 'app-request-workflow',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-workflow.component.scss']
 })
 export class RequestWorkflowComponent implements OnInit {
+
+  public body:IBody = {title:"Mis Workflows"};
 
   constructor() { }
 

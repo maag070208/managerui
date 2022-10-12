@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IBody } from '@app/core/models/body/IBody.model';
 
 @Component({
   selector: 'app-body',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class BodyComponent implements OnInit {
 
-  public title:string = 'Prenomina';
+  @Input() body!:IBody;
 
   constructor() { }
 

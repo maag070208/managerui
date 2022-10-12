@@ -17,13 +17,13 @@
   min-width: $min;
   animation-duration: 1s;
   animation-name: slideout;
-  animation: slideout 0.5s forwards;
+  animation: slideout 0.2s forwards;
 }
 
 .main-container:hover {
   animation-duration: 1s;
   animation-name: slidein;
-  animation: slidein 0.3s forwards;
+  animation: slidein 0.2s forwards;
 }
 
 @keyframes slidein {

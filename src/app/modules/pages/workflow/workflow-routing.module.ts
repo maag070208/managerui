@@ -8,6 +8,7 @@ import { RequestWorkflowComponent } from './pages/request-workflow/request-workf
 const routes: Routes = [
   {
     path: 'request-workflow',
+    title:'Request Workflow',
     component: RequestWorkflowComponent,
     canActivate: [MainGuard],
     data: {
