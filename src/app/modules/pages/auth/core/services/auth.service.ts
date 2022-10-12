@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IAuthUser } from '@app/core/models/auth/IAuthUser.model';
 import { ILogin } from '@app/core/models/auth/ILogin.model';
+import { AuthState } from '@app/core/models/state/IAuth.state';
 import { LoginActionComplete, LoginActionError } from '@app/core/state/actions/auth.action';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '@env/environment';
@@ -29,11 +30,13 @@ export class AuthService {
         this.store.dispatch(LoginActionComplete({ auth: { token: login.token, authUser: userAuth} }));
         return true
       };
-      this.store.dispatch(LoginActionError({ auth: { token: "", authUser: {} } }));
+      const authState = {} as AuthState;
+      this.store.dispatch(LoginActionError({ auth: authState }));
       return false;
     } catch (error: any) {
-      console.log(error);
-      this.store.dispatch(LoginActionError({ auth: { token: "", authUser: {} } }));
+      console.log("LOGIN ERROR",error);
+      const authState = {} as AuthState;
+      this.store.dispatch(LoginActionError({ auth: authState }));
       return false;
     }
   }

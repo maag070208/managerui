@@ -51,10 +51,10 @@ export class LoginComponent implements OnInit {
     if (this.LoginForm.valid && this.checkForm.valid) {
       let login = await this._authService.login(authUser);
       if (login) {
-        this._alertService.openSnackBar({ title: "Ok", message: "Bienvenido.", icon: "success", type: true, options: {} });
+        this._alertService.openSnackBar({ title: "Ok", message: "Bienvenido.", icon: "success", type: 'mat-success', options: {} });
         this.router.navigate(['/home/workflow']);
       } else {
-        this._alertService.openSnackBar({ title: "Error", message: "Error al iniciar sesión.", icon: "error", type: false, options: {} });
+        this._alertService.openSnackBar({ title: "Error", message: "Error al iniciar sesión.", icon: "error", type: 'mat-error', options: {} });
       }
     }
   }

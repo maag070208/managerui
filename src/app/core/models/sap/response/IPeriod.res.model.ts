@@ -1,4 +1,4 @@
-export interface IGetPeriods {
+export interface GetPeriods {
     Items: IPeriodItem[];
 }
 

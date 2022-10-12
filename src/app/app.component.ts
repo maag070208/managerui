@@ -5,8 +5,8 @@ import { LoginActionReload } from './core/state/actions/auth.action';
 import { AppState } from './core/state/app.state';
 import { GetGlobalDataState } from './core/state/selectors/global.selector';
 import { IsAuthenticatedSelector } from './core/state/selectors/auth.selector';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { LoaderService } from './core/services/loader.service';
+import { SapActionReload } from './core/state/actions/sap.action';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +34,8 @@ export class AppComponent implements OnInit {
     if(__state__.auth.token) {
       // TODO: in this part add the previous state to the store
       this.store.dispatch(LoginActionReload({ auth: __state__.auth }));
+      this.store.dispatch(SapActionReload({ sap: __state__.sap }));
+
     }
     localStorage.removeItem('__state__');
   }

@@ -1,8 +1,8 @@
-export interface IEmployeeMasterData {
-    Items: Items;
+export interface EmployeeMasterData {
+    Items: IItemsEmployeeMasterData;
 }
 
- interface Items {
+export interface IItemsEmployeeMasterData {
     ColaboratorID:                string;
     Name:                         string;
     PaternalLastName:             string;

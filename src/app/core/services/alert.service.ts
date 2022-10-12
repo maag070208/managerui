@@ -16,12 +16,10 @@ export class AlertService {
       config: {
         duration: 3000,
         data: model,
-        panelClass: ['mat-toolbar', model?.type ? 'mat-primary' : 'mat-warn']
+        panelClass: ['mat-toolbar', model?.type]
       }
     }
 
-    // {config:{duration:1000000, panelClass: ['mat-toolbar','mat-primary'], data:{title:"Error",message:"Error al iniciar sesión.",icon:"error",color:"warn",options:{}}}}
-
     this._snackBar.openFromComponent<SnackBarComponent>(SnackBarComponent, options.config);
   }
-} 
+}

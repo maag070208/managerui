@@ -14,6 +14,10 @@ export const GetAuthUserRolesSelector = createSelector(
   selectAuthState,
   (state: AuthState) => state.authUser.role
 )
+export const GetAuthUserCollaboratorID = createSelector(
+  selectAuthState,
+  (state: AuthState) => state.authUser.collaboratorid
+)
 
 
 const isTokenExpired = (token: string):boolean =>{

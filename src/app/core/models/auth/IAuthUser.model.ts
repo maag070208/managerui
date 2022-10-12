@@ -7,4 +7,5 @@ export interface IAuthUser {
     primarysid?: string;
     role?: string;
     unique_name?: string;
+    collaboratorid: string;
   }

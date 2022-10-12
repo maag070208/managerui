@@ -11,21 +11,25 @@ export class JwtInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // const token = localStorage.getItem('token');
-    // if (token) {
-    //   request = request.clone({
-    //     setHeaders: {
-    //       Authorization: `Bearer ${token}`
-    //     }
-    //   });
-    // }
-
     this.loader.show();
+
+    // Authmanager
     if (includes(request.url, environment.apiAuthUrl)) {
-      console.log('intercepted: ', request.url);
+      console.log('intercepted authmanger: ', request.url);
       request = request.clone({
         setHeaders: {
           'FR-APP': environment.apiAuthKey
+        }
+      });
+    }
+
+    // SAP
+    if (includes(request.url, environment.apiSap)) {
+      console.log('intercepted sap: ', request.url);
+      request = request.clone({
+        setHeaders: {
+          Authorization: 'Basic U0FQX1BPOnA4MjVfOG8ySSMq',
+          'Content-Type': 'application/json',
         }
       });
     }

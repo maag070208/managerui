@@ -8,6 +8,7 @@ export interface ISnackBarData {
     title:string;
     message:string;
     icon:string;
-    type: boolean;
+    type: MatSnackBarType;
     options:any
 }
+type MatSnackBarType = 'mat-primary' | 'mat-success' | 'mat-warn' | 'mat-error';

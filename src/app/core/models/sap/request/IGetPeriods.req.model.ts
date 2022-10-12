@@ -1,9 +1,13 @@
-export interface IGetPeriods {
-    Items: Items;
+interface Items {
+  StartDate: string;
+  EndDate: string;
+  PayrollArea: string;
 }
 
-export interface Items {
-    StartDate:   string;
-    EndDate:     string;
-    PayrollArea: string;
+interface GetPeriods {
+  Items: Items;
+}
+
+export interface IGetPeriodsReq {
+  GetPeriods: GetPeriods;
 }
